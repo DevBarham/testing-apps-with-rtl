@@ -46,7 +46,16 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                script{
                  echo 'Deploying App...'
+                    sh ''' 
+                    npm run start
+                    '''
+                    sh '''
+                     sh 'sudo cp -r dist/* /var/www/html' // Copy build files to NGINX directory
+                    sh 'sudo systemctl restart nginx' // Restart NGINX to apply changes
+                    '''
+                }
             }
         }
     }
