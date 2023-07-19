@@ -15,7 +15,7 @@ pipeline {
         
         stage("Checkout from SCM"){
             steps {
-                git branch: 'main', credentialsId: 'deploy', url: 'https://github.com/DevBarham/testing-apps-with-rtl'
+                git branch: 'master', credentialsId: 'deploy', url: 'https://github.com/DevBarham/testing-apps-with-rtl'
             }
         }
 
