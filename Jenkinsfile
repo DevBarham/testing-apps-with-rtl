@@ -49,7 +49,7 @@ pipeline {
                 script{
                  echo 'Deploying App...'
                     sh ''' 
-                    npm run start
+                    npm run build
                     '''
                     sh '''
                      sh 'sudo cp -r dist/* /var/www/html' // Copy build files to NGINX directory
